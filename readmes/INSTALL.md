@@ -20,8 +20,6 @@ sudo apt-get install python3.13-venv
 
 Скачай `python 3.13` [отсюда](https://www.python.org/downloads/) и установи его
 
-Зайди в переменные среды windows`
-
 ## Создание виртуальной среды
 
 В корне репозитория, запусти команду
@@ -30,13 +28,14 @@ sudo apt-get install python3.13-venv
 
 ```sh
 python3.13 -m venv .venv
-.venv/scripts/activate
+source .venv/bin/activate
 ```
 
 На windows
 
 ```cmd
 "C:\Program Files\Python313\python.exe" -m venv .venv
+".venv\Scripts\activate.bat"
 ```
 
 > [!IMPORTANT]
