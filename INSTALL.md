@@ -30,6 +30,7 @@ sudo apt-get install python3.13-venv
 
 ```sh
 python3.13 -m venv .venv
+.venv/scripts/activate
 ```
 
 На windows
@@ -42,10 +43,9 @@ python3.13 -m venv .venv
 > Если python 3.13 у тебя не в `C:\Program Files\Python313`, то пиши другой путь к `exe` файлу.
 > Например, `C:\Users\lesar\AppData\Local\Programs\Python313` при установке только данному пользователю
 
-В консоли перед строкой ввода должен появиться текст `.venv`
-
 > [!TIP]
-> В `vs code` при открытии файла `src/main.py` справа снизу появится текст `3.13 ('.venv': venv)`
+> В `vs code` в консоли перед строкой ввода должен появиться текст `(.venv)`,
+> а при открытии файла `src/main.py` справа снизу появится кнопка `3.13 ('.venv': venv)`.
 > Если там другая версия питона, нажми на нее и выбери ту, где написано `venv`
 
 ## Установка библиотек
