@@ -39,7 +39,7 @@ python3.13 -m venv .venv
 "C:\Program Files\Python313\python.exe" -m venv .venv
 ```
 
-> [!TIP]
+> [!IMPORTANT]
 > Если python 3.13 у тебя не в `C:\Program Files\Python313`, то пиши другой путь к `exe` файлу.
 > Например, `C:\Users\lesar\AppData\Local\Programs\Python313` при установке только данному пользователю
 
@@ -69,3 +69,5 @@ pip install -r requirements.txt
 ```sh
 python3 src/main.py
 ```
+
+Или в vscode открой файл `src/main.py` и запусти его, нажав на соответствующую кнопку справа сверху
