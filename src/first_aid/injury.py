@@ -1,5 +1,6 @@
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes, CallbackQueryHandler
+import os
 
 
 class InjuryAid:
@@ -26,7 +27,7 @@ class InjuryAid:
             
         await self.bot.delete_previous_messages(chat_id, context)
 
-        main_text = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\injury\main_injury.txt'
+        main_text = os.path.join('src', 'first_aid', 'first_aid_text', 'injury', 'main_injury.txt')
 
         try:
             with open(main_text, 'r', encoding='utf-8') as file:
@@ -36,7 +37,7 @@ class InjuryAid:
         message = await context.bot.send_message(chat_id=chat_id, text=main_text, parse_mode='Markdown')
         self.bot.user_message_ids[chat_id].append(message.message_id)
         
-        video_path = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_photos\travmy-konechnostey.mp4'
+        video_path = os.path.join('src', 'first_aid', 'first_aid_photos', 'travmy-konechnostey.mp4')
 
         keyboard = [
             [InlineKeyboardButton("Вывихи", callback_data='Luxationen')],
@@ -71,11 +72,11 @@ class InjuryAid:
             
         await self.bot.delete_previous_messages(chat_id, context)
 
-        photo_path = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_photos\7278381c00c2c88e9180b07131e80552.jpg'
+        photo_path = os.path.join('src', 'first_aid', 'first_aid_photos', '7278381c00c2c88e9180b07131e80552.jpg')
         message = await context.bot.send_photo(chat_id=chat_id, photo=open(photo_path, 'rb'))
         self.bot.user_message_ids[chat_id].append(message.message_id)
 
-        main_text = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\injury\prellungent.txt'
+        main_text = os.path.join('src', 'first_aid', 'first_aid_text', 'injury', 'prellungent.txt')
 
         try:
             with open(main_text, 'r', encoding='utf-8') as file:
@@ -101,11 +102,11 @@ class InjuryAid:
             
         await self.bot.delete_previous_messages(chat_id, context)
 
-        photo_path = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_photos\Verstauchung.jpg'
+        photo_path = os.path.join('src', 'first_aid', 'first_aid_photos', 'Verstauchung.jpg')
         message = await context.bot.send_photo(chat_id=chat_id, photo=open(photo_path, 'rb'))
         self.bot.user_message_ids[chat_id].append(message.message_id)
 
-        main_text = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\injury\verstauchung.txt'
+        main_text = os.path.join('src', 'first_aid', 'first_aid_text', 'injury', 'verstauchung.txt')
 
         try:
             with open(main_text, 'r', encoding='utf-8') as file:
@@ -131,11 +132,11 @@ class InjuryAid:
             
         await self.bot.delete_previous_messages(chat_id, context)
 
-        photo_path = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_photos\dislocation.jpg'
+        photo_path = os.path.join('src', 'first_aid', 'first_aid_photos', 'dislocation.jpg')
         message = await context.bot.send_photo(chat_id=chat_id, photo=open(photo_path, 'rb'))
         self.bot.user_message_ids[chat_id].append(message.message_id)
 
-        main_text = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\injury\luxationen.txt'
+        main_text = os.path.join('src', 'first_aid', 'first_aid_text', 'injury', 'luxationen.txt')
 
         try:
             with open(main_text, 'r', encoding='utf-8') as file:
@@ -161,11 +162,11 @@ class InjuryAid:
             
         await self.bot.delete_previous_messages(chat_id, context)
 
-        photo_path = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_photos\Frakturen2.jpg'
+        photo_path = os.path.join('src', 'first_aid', 'first_aid_photos', 'Frakturen2.jpg')
         message = await context.bot.send_photo(chat_id=chat_id, photo=open(photo_path, 'rb'))
         self.bot.user_message_ids[chat_id].append(message.message_id)
 
-        main_text = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\injury\Frakturen.txt'
+        main_text = os.path.join('src', 'first_aid', 'first_aid_text', 'injury', 'Frakturen.txt')
 
         try:
             with open(main_text, 'r', encoding='utf-8') as file:
@@ -194,11 +195,11 @@ class InjuryAid:
             
         await self.bot.delete_previous_messages(chat_id, context)
 
-        photo_path = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_photos\perelom-reber.jpg'
+        photo_path = os.path.join('src', 'first_aid', 'first_aid_photos', 'perelom-reber.jpg')
         message = await context.bot.send_photo(chat_id=chat_id, photo=open(photo_path, 'rb'))
         self.bot.user_message_ids[chat_id].append(message.message_id)
 
-        main_text = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\injury\rib_fracturen.txt'
+        main_text = os.path.join('src', 'first_aid', 'first_aid_text', 'injury', 'rib_fracturen.txt')
 
         try:
             with open(main_text, 'r', encoding='utf-8') as file:

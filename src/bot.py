@@ -43,9 +43,6 @@ class MyBot:
         chat_id = update.effective_chat.id
         await self.delete_previous_messages(chat_id, context)
 
-        # if update.message:
-        #     await self.delete_user_message(update, context)
-
         keyboard = [
             [InlineKeyboardButton("Напоминания", callback_data="reminders")],
             [InlineKeyboardButton("Первая помощь", callback_data='first_aid_menu')],
@@ -66,5 +63,12 @@ class MyBot:
             if query.data == 'first_aid_menu':
                 await self.first_aid.first_aid_menu(update, context)
             else:
-                message = await context.bot.send_message(chat_id, "Неизвестная команда.")
+                message = await context.bot.send_message(chat_id, "Извините, эта функция пока не доступна.")
                 self.user_message_ids[chat_id].append(message.message_id)
+                keyboard = [
+                    [InlineKeyboardButton("Напоминания", callback_data="reminders")],
+                    [InlineKeyboardButton("Первая помощь", callback_data='first_aid_menu')],
+                ]
+                reply_markup = InlineKeyboardMarkup(keyboard)
+                message = await context.bot.send_message(chat_id, "Выберите опцию:", reply_markup=reply_markup)
+                self.user_message_ids.setdefault(chat_id, []).append(message.message_id)

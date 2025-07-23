@@ -23,11 +23,11 @@ class Breath:
             
         await self.bot.delete_previous_messages(chat_id, context)
         
-        photo_path = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_photos\breath.jpg'
+        photo_path = os.path.join('src', 'first_aid', 'first_aid_photos', 'breath.jpg')
         message = await context.bot.send_photo(chat_id=chat_id, photo=open(photo_path, 'rb'))
         self.bot.user_message_ids[chat_id].append(message.message_id)
 
-        text_with_link_path = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\breath\main_breath.txt'
+        text_with_link_path = os.path.join('src', 'first_aid', 'first_aid_text', 'breath', 'main_breath.txt')
 
         try:
             with open(text_with_link_path, 'r', encoding='utf-8') as file:
@@ -38,7 +38,7 @@ class Breath:
         self.bot.user_message_ids[chat_id].append(message.message_id)
         
         
-        video_path = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_photos\chelovek-podavilsya-chto-delat.mp4'
+        video_path = os.path.join('src', 'first_aid', 'first_aid_photos', 'chelovek-podavilsya-chto-delat.mp4')
 
         keyboard = [
             [InlineKeyboardButton("Реанимация (СЛР)", callback_data='aid_reanimation')],

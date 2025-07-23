@@ -27,7 +27,7 @@ class Burns:
             
         await self.bot.delete_previous_messages(chat_id, context)
 
-        main_text = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\burns\main_burns.txt'
+        main_text = os.path.join('src', 'first_aid', 'first_aid_text', 'burns', 'main_burns.txt')
 
         try:
             with open(main_text, 'r', encoding='utf-8') as file:
@@ -57,7 +57,7 @@ class Burns:
             
         await self.bot.delete_previous_messages(chat_id, context)
 
-        text_ = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\burns\thermal_burns.txt'
+        text_ = os.path.join('src', 'first_aid', 'first_aid_text', 'burns', 'thermal_burns.txt')
 
         try:
             with open(text_, 'r', encoding='utf-8') as file:
@@ -84,7 +84,7 @@ class Burns:
             
         await self.bot.delete_previous_messages(chat_id, context)
 
-        text_ = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\burns\chemical_burns.txt'
+        text_ = os.path.join('src', 'first_aid', 'first_aid_text', 'burns', 'chemical_burns.txt')
 
         try:
             with open(text_, 'r', encoding='utf-8') as file:
@@ -94,7 +94,7 @@ class Burns:
         message = await context.bot.send_message(chat_id=chat_id, text=main_text, parse_mode='Markdown')
         self.bot.user_message_ids[chat_id].append(message.message_id)
         
-        video_path = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_photos\ozhogi.mp4'
+        video_path = os.path.join('src', 'first_aid', 'first_aid_photos', 'ozhogi.mp4')
 
         keyboard = [
             [InlineKeyboardButton("Назад в раздел ожогов", callback_data='burns')],
@@ -126,7 +126,7 @@ class Burns:
             
         await self.bot.delete_previous_messages(chat_id, context)
 
-        text_ = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\burns\sun_burns.txt'
+        text_ = os.path.join('src', 'first_aid', 'first_aid_text', 'burns', 'sun_burns.txt')
 
         try:
             with open(text_, 'r', encoding='utf-8') as file:
@@ -153,7 +153,7 @@ class Burns:
             
         await self.bot.delete_previous_messages(chat_id, context)
 
-        text_ = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\burns\electric_burns.txt'
+        text_ = os.path.join('src', 'first_aid', 'first_aid_text', 'burns', 'electric_burns.txt')
 
         try:
             with open(text_, 'r', encoding='utf-8') as file:

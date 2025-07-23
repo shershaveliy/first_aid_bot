@@ -23,7 +23,7 @@ class Poisoning:
             
         await self.bot.delete_previous_messages(chat_id, context)
 
-        text_with_link_path = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\poisoning\poisoning.txt'
+        text_with_link_path = os.path.join('src', 'first_aid', 'first_aid_text', 'poisoning', 'poisoning.txt')
 
         try:
             with open(text_with_link_path, 'r', encoding='utf-8') as file:
@@ -33,7 +33,7 @@ class Poisoning:
         message = await context.bot.send_message(chat_id=chat_id, text=main_text, parse_mode='Markdown')
         self.bot.user_message_ids[chat_id].append(message.message_id)
 
-        video_path = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_photos\otravleniya.mp4'
+        video_path = os.path.join('src', 'first_aid', 'first_aid_photos', 'otravleniya.mp4')
 
         keyboard = [
             [InlineKeyboardButton("Назад в меню первой помощи", callback_data='back_to_menu')],

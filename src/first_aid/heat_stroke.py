@@ -23,7 +23,7 @@ class Heat_stroke:
             
         await self.bot.delete_previous_messages(chat_id, context)
 
-        text_with_link_path = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\heat_stroke\heat_stroke.txt'
+        text_with_link_path = os.path.join('src', 'first_aid', 'first_aid_text', 'heat_stroke', 'heat_stroke.txt')
 
         try:
             with open(text_with_link_path, 'r', encoding='utf-8') as file:

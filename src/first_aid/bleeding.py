@@ -31,7 +31,7 @@ class BleedingAid:
             
         await self.bot.delete_previous_messages(chat_id, context)
 
-        main_text = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\bleeding\main_bleeding.txt'
+        main_text = os.path.join('src', 'first_aid', 'first_aid_text', 'bleeding', 'main_bleeding.txt')
 
         try:
             with open(main_text, 'r', encoding='utf-8') as file:
@@ -65,11 +65,11 @@ class BleedingAid:
             
         await self.bot.delete_previous_messages(chat_id, context)
 
-        photo_path = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_photos\jgyt.png'
+        photo_path = os.path.join('src', 'first_aid', 'first_aid_photos', 'jgyt.png')
         message = await context.bot.send_photo(chat_id=chat_id, photo=open(photo_path, 'rb'))
         self.bot.user_message_ids[chat_id].append(message.message_id)
 
-        main_text = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\bleeding\bleeding.txt'
+        main_text = os.path.join('src', 'first_aid', 'first_aid_text', 'bleeding', 'bleeding.txt')
 
         try:
             with open(main_text, 'r', encoding='utf-8') as file:
@@ -79,7 +79,7 @@ class BleedingAid:
         message = await context.bot.send_message(chat_id=chat_id, text=main_text, parse_mode='Markdown')
         self.bot.user_message_ids[chat_id].append(message.message_id)
 
-        video_path = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_photos\krovotecheniya.mp4'
+        video_path = os.path.join('src', 'first_aid', 'first_aid_photos', 'krovotecheniya.mp4')
 
         keyboard = [
             [InlineKeyboardButton("Первая помощь при внутреннем кровотечении", callback_data='bleeding1')],
@@ -113,7 +113,7 @@ class BleedingAid:
         await self.bot.delete_previous_messages(chat_id, context)
 
 
-        main_text = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\bleeding\bleeding1.txt'
+        main_text = os.path.join('src', 'first_aid', 'first_aid_text', 'bleeding', 'bleeding1.txt')
 
         try:
             with open(main_text, 'r', encoding='utf-8') as file:
@@ -141,7 +141,7 @@ class BleedingAid:
         await self.bot.delete_previous_messages(chat_id, context)
 
 
-        main_text = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\bleeding\bleeding2.txt'
+        main_text = os.path.join('src', 'first_aid', 'first_aid_text', 'bleeding', 'bleeding2.txt')
 
         try:
             with open(main_text, 'r', encoding='utf-8') as file:
@@ -169,7 +169,7 @@ class BleedingAid:
         await self.bot.delete_previous_messages(chat_id, context)
 
 
-        main_text = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\bleeding\bleeding3.txt'
+        main_text = os.path.join('src', 'first_aid', 'first_aid_text', 'bleeding', 'bleeding3.txt')
 
         try:
             with open(main_text, 'r', encoding='utf-8') as file:
@@ -198,7 +198,7 @@ class BleedingAid:
         await self.bot.delete_previous_messages(chat_id, context)
 
 
-        main_text = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\bleeding\abrasions.txt'
+        main_text = main_text = os.path.join('src', 'first_aid', 'first_aid_text', 'bleeding', 'abrasions.txt')
 
         try:
             with open(main_text, 'r', encoding='utf-8') as file:
@@ -224,11 +224,11 @@ class BleedingAid:
             
         await self.bot.delete_previous_messages(chat_id, context)
 
-        photo_path = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_photos\foreign_body.jpg'
+        photo_path = os.path.join('src', 'first_aid', 'first_aid_photos', 'foreign_body.jpg')
         message = await context.bot.send_photo(chat_id=chat_id, photo=open(photo_path, 'rb'))
         self.bot.user_message_ids[chat_id].append(message.message_id)
 
-        main_text = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\bleeding\foreign_body.txt'
+        main_text = main_text = os.path.join('src', 'first_aid', 'first_aid_text', 'bleeding', 'foreign_body.txt')
 
         try:
             with open(main_text, 'r', encoding='utf-8') as file:
@@ -255,11 +255,11 @@ class BleedingAid:
             
         await self.bot.delete_previous_messages(chat_id, context)
 
-        photo_path = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_photos\rib_cage.jpg'
+        photo_path = os.path.join('src', 'first_aid', 'first_aid_photos', 'rib_cage.jpg')
         message = await context.bot.send_photo(chat_id=chat_id, photo=open(photo_path, 'rb'))
         self.bot.user_message_ids[chat_id].append(message.message_id)
 
-        main_text = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\bleeding\rib_cage.txt'
+        main_text = main_text = os.path.join('src', 'first_aid', 'first_aid_text', 'bleeding', 'rib_cage.txt')
 
         try:
             with open(main_text, 'r', encoding='utf-8') as file:
@@ -287,7 +287,7 @@ class BleedingAid:
             
         await self.bot.delete_previous_messages(chat_id, context)
 
-        main_text = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\bleeding\abdominal_injury.txt'
+        main_text = main_text = os.path.join('src', 'first_aid', 'first_aid_text', 'bleeding', 'abdominal_injury.txt')
 
         try:
             with open(main_text, 'r', encoding='utf-8') as file:
@@ -313,7 +313,7 @@ class BleedingAid:
             
         await self.bot.delete_previous_messages(chat_id, context)
 
-        main_text = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\bleeding\eye_injuries.txt'
+        main_text = main_text = os.path.join('src', 'first_aid', 'first_aid_text', 'bleeding', 'eye_injuries.txt')
 
         try:
             with open(main_text, 'r', encoding='utf-8') as file:

@@ -23,7 +23,7 @@ class Head_and_back:
             
         await self.bot.delete_previous_messages(chat_id, context)
 
-        text_ = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\head_and_back\main_head_and_back.txt'
+        text_ = os.path.join('src', 'first_aid', 'first_aid_text', 'head_and_back', 'main_head_and_back.txt')
 
         try:
             with open(text_, 'r', encoding='utf-8') as file:
@@ -34,7 +34,7 @@ class Head_and_back:
         self.bot.user_message_ids[chat_id].append(message.message_id)
         
 
-        video_path = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_photos\travmy-pozvonochnika.mp4'
+        video_path = os.path.join('src', 'first_aid', 'first_aid_photos', 'travmy-pozvonochnika.mp4')
 
         try:
             message = await context.bot.send_video(
@@ -48,7 +48,7 @@ class Head_and_back:
             print(f"Ошибка: {e}")
         self.bot.user_message_ids[chat_id].append(message.message_id)
 
-        video_path = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_photos\travmy-golovy.mp4'
+        video_path = os.path.join('src', 'first_aid', 'first_aid_photos', 'travmy-golovy.mp4')
 
         keyboard = [
             [InlineKeyboardButton("Назад в меню первой помощи", callback_data='back_to_menu')],

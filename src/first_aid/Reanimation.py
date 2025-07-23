@@ -24,12 +24,14 @@ class ReanimationAid:
             
         await self.bot.delete_previous_messages(chat_id, context)
         
-        photo_path = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_photos\htmlconvd-xmG7oM446x1.jpg'
+        base_path = os.path.join('src', 'first_aid')
+        photo_path = os.path.join(base_path, 'first_aid_photos', 'htmlconvd-xmG7oM446x1.jpg')
+        
         message = await context.bot.send_photo(chat_id=chat_id, photo=open(photo_path, 'rb'))
         self.bot.user_message_ids[chat_id].append(message.message_id)
 
         # Текст с ссылкой
-        text_with_link_path = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_text\Reanimation\text_with_link.txt'
+        text_with_link_path = os.path.join(base_path, 'first_aid_text', 'Reanimation', 'text_with_link.txt')
 
         try:
             with open(text_with_link_path, 'r', encoding='utf-8') as file:
@@ -40,7 +42,7 @@ class ReanimationAid:
         self.bot.user_message_ids[chat_id].append(message.message_id)
         
         
-        video_path = r'C:\Users\jelena\Desktop\new_bot\med-bot\src\first_aid\first_aid_photos\serdechno-legochnaya-reanimaciya.mp4'
+        video_path = os.path.join(base_path, 'first_aid_photos', 'serdechno-legochnaya-reanimaciya.mp4')
 
         keyboard = [
             [InlineKeyboardButton("Назад в меню первой помощи", callback_data='back_to_menu')],
